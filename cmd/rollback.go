@@ -50,7 +50,7 @@ func rollbackCmd() *cobra.Command {
 			diff.revisions = args[1:]
 
 			if diff.client == nil {
-				diff.client = helm.NewClient(helm.Host(os.Getenv("TILLER_HOST")), helm.ConnectTimeout(int64(30)))
+				diff.client = helm.NewClient(helm.Host(os.Getenv("TILLER_HOST")))
 			}
 
 			return diff.backcast()
